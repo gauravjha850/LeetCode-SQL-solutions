@@ -1,15 +1,11 @@
 class Solution:
     def uniformArray(self, nums1: list[int]) -> bool:
-        n=len(nums1)
-        if min(nums1)%2!=0:
+        mn=min(nums1)
+
+        if all(x%2==0 for x in nums1) or all(x%2!=0 for x in nums1):
             return True
-        else:
-            ans = True
-            nums1.sort()
-            for i in range(0,n):
-                if nums1[i]%2 !=0:
-                    ans = False 
-                    break              
-            
-            return ans
+        return mn%2==1
+        
+
+
                 
